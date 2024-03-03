@@ -1,0 +1,14 @@
+io/foodmenu/gt/webservice/GetLargestMealRequest.class
+io/foodmenu/gt/webservice/Meal.class
+com/example/springsoap/SpringSoapApplication.class
+io/foodmenu/gt/webservice/GetLargestMealResponse.class
+io/foodmenu/gt/webservice/ObjectFactory.class
+com/example/springsoap/WebServiceConfig.class
+com/example/springsoap/MenuEndpoint.class
+io/foodmenu/gt/webservice/package-info.class
+io/foodmenu/gt/webservice/GetCheapestMealRequest.class
+com/example/springsoap/MealRepository.class
+io/foodmenu/gt/webservice/Mealtype.class
+io/foodmenu/gt/webservice/GetMealRequest.class
+io/foodmenu/gt/webservice/GetMealResponse.class
+io/foodmenu/gt/webservice/GetCheapestMealResponse.class

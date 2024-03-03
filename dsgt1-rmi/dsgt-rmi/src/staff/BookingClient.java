@@ -3,14 +3,29 @@ package staff;
 import java.time.LocalDate;
 import java.util.Set;
 
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
 import hotel.BookingDetail;
+import hotel.IBookingManager;
 import hotel.BookingManager;
+
 
 public class BookingClient extends AbstractScriptedSimpleTest {
 
 	private BookingManager bm = null;
 
 	public static void main(String[] args) throws Exception {
+		String host = (args.length < 1) ? null : args[0];
+		try {
+			Registry registry = LocateRegistry.getRegistry(host);
+			IBookingManager stub = (IBookingManager) registry.lookup("BookingManager");
+			String response = stub.getAllRooms().toString();
+			System.out.println("response: " + response);}
+		catch (Exception e) {
+			System.err.println("Client exception: " + e.toString());
+			e.printStackTrace();
+		}
 		BookingClient client = new BookingClient();
 		client.run();
 	}

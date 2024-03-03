@@ -7,9 +7,19 @@ import java.rmi.server.UnicastRemoteObject;
 public class BookingServer {
     public static void main(String[] args) throws Exception {
         //create
-        BookingManager bm = new BookingManager();
-        IBookingManager stub = (IBookingManager) UnicastRemoteObject.exportObject(bm,0);
-        Registry registry = LocateRegistry.getRegistry();
-        registry.rebind("IBookingManager",stub);
+        try{
+            BookingManager bm = new BookingManager();
+            IBookingManager stub = (IBookingManager) UnicastRemoteObject.exportObject(bm,0);
+            //Bind the remote object's stub in the registry
+            Registry registry = LocateRegistry.getRegistry();
+            registry.rebind("BookingManager",stub);
+
+            System.err.println("Server ready");
+        }catch (Exception e){
+            System.err.println("Server exception:" + e.toString());
+            e.printStackTrace();
+        }
+
+
     }
 }

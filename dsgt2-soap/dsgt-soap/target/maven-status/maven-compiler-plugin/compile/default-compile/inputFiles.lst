@@ -1,0 +1,14 @@
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/ObjectFactory.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/src/main/java/com/example/springsoap/MenuEndpoint.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/Mealtype.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/package-info.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/src/main/java/com/example/springsoap/WebServiceConfig.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/src/main/java/com/example/springsoap/MealRepository.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/Meal.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/src/main/java/com/example/springsoap/SpringSoapApplication.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetCheapestMealRequest.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetMealResponse.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetLargestMealResponse.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetMealRequest.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetCheapestMealResponse.java
+/home/ac/dapp2024work/dsgt2-soap/dsgt-soap/target/generated-sources/jaxb/io/foodmenu/gt/webservice/GetLargestMealRequest.java
