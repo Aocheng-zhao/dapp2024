@@ -65,14 +65,41 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:complexType name="meallist">
+        <xs:sequence>
+            <xs:element name="mealname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="order">
         <xs:sequence>
             <xs:element name="address" type="xs:string"/>
-            <xs:element name="kcal" type="xs:int"/>
-            <xs:element name="description" type="xs:string"/>
-            <xs:element name="mealtype" type="tns:mealtype"/>
-            <xs:element name="price" type="xs:float"/>
+            <xs:element name="meals" type="tns:meallist"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:complexType name="confirmation">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="order" type="tns:order"/>
+            <xs:element name="totalcost" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="addOrderRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="order" type="tns:order"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addOrderResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="confirmation" type="tns:confirmation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

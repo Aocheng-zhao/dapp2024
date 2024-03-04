@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://foodmenu.io/gt/webservice"
+                  xmlns:tns="http://foodmenu.io/gt/webservice">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:addOrderRequest>
+            <tns:order>
+                <tns:address>123 Main Street, Leuven, Belgium</tns:address>
+                <tns:meals>
+                    <tns:mealname>Steak</tns:mealname>
+                    <tns:mealname>Portobello</tns:mealname>
+                    <!-- Add more meals if needed -->
+                </tns:meals>
+            </tns:order>
+        </gs:addOrderRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
