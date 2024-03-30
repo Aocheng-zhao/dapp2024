@@ -11,8 +11,8 @@ class MealExistAdvice {
 
     @ResponseBody
     @ExceptionHandler(MealNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    String mealNotFoundHandler(MealNotFoundException ex) {
+    @ResponseStatus(HttpStatus.CONFLICT)
+    String mealNotFoundHandler(MealExistException ex) {
         return ex.getMessage();
     }
 }

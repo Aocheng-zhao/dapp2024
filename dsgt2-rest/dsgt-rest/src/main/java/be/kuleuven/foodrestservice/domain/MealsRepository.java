@@ -54,4 +54,61 @@ public class MealsRepository {
     public Collection<Meal> getAllMeal() {
         return meals.values();
     }
+
+    public Collection<Meal> getCheapestMeals() {
+        List<Meal> cheapestMeals = new ArrayList<>();
+        double lowestPrice = Double.MAX_VALUE;
+        // Iterate over all meals in the map
+        for (Meal meal : meals.values()) {
+            double price = meal.getPrice();
+            if (price < lowestPrice) {
+                cheapestMeals.clear();
+                cheapestMeals.add(meal);
+                lowestPrice = price;
+            } else if (price == lowestPrice) {
+                cheapestMeals.add(meal);
+            }
+        }
+        // Return the list of cheapest meals
+        return cheapestMeals;
+    }
+
+    public Collection<Meal> getLargestMeals() {
+        List<Meal> largestMeals = new ArrayList<>();
+        double highestCalorie = 0;
+        // Iterate over all meals in the map
+        for (Meal meal : meals.values()) {
+            double kcal = meal.getKcal();
+            if (kcal > highestCalorie) {
+                largestMeals.clear();
+                largestMeals.add(meal);
+                highestCalorie = kcal;
+            } else if (kcal == highestCalorie) {
+                largestMeals.add(meal);
+            }
+        }
+        // Return the list of cheapest meals
+        return largestMeals;
+    }
+
+    public Meal addMeal(Meal newMeal){
+        String id = String.valueOf(newMeal.hashCode());
+        newMeal.setId(id);
+        return meals.put(newMeal.getId(),newMeal);
+    }
+
+    public Meal updateMeal(Meal newMeal){
+        Optional<Meal> meal = findMeal(newMeal.getId());
+        if(meal.isPresent()){
+            meal.get().setMealType(newMeal.getMealType());
+            meal.get().setDescription(newMeal.getDescription());
+            meal.get().setKcal(newMeal.getKcal());
+            meal.get().setName(newMeal.getName());
+            return meal.get();
+        }else{
+            return null;
+        }
+    }
+
+
 }

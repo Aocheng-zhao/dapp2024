@@ -1,0 +1,14 @@
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/controllers/MealsRestController.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/MealsRepository.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/exceptions/MealNotFoundException.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/MealType.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/exceptions/MealExistAdvice.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/controllers/MealsRestRpcStyleController.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/FoodRestServiceApplication.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/exceptions/MealNotFoundAdvice.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/exceptions/MealExistException.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/OrdersRepository.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/Order.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/Meal.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/OrderItem.java
+/home/ac/Documents/dapp2024/dsgt2-rest/dsgt-rest/src/main/java/be/kuleuven/foodrestservice/domain/OrderConfirmation.java

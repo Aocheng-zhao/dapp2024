@@ -2,9 +2,14 @@ package be.kuleuven.foodrestservice.domain;
 
 import java.util.Objects;
 
-public class OrderItems{
+public class OrderItem {
     protected String name;
     protected Double price;
+
+    public OrderItem(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -26,7 +31,7 @@ public class OrderItems{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderItems that = (OrderItems) o;
+        OrderItem that = (OrderItem) o;
         return Objects.equals(name, that.name) && Objects.equals(price, that.price);
     }
 

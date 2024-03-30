@@ -1,0 +1,13 @@
+{
+  "address": "Ijzerenmolenstraat 26",
+  "orderItems":[
+    {
+      "name": "Steak",
+      "price": 10.0
+    },
+    {
+      "name": "Portobello",
+      "price": 7.0
+    }
+  ]
+}

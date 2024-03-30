@@ -1,80 +1,56 @@
 package be.kuleuven.foodrestservice.domain;
 
-import java.util.Objects;
-
+import java.util.*;
 public class Order {
-
-    protected String id;
-    protected String name;
-    protected Integer kcal;
-    protected Double price;
-    protected String description;
-    protected MealType mealType;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
+    public Order(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Order(int id, String address, List<OrderItem> orderItems) {
+        this.id = id;
+        this.address = address;
+        this.orderItems = orderItems;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    protected  int id;
+    protected String address;
+    protected List<OrderItem> orderItems;
+
+    public String getAddress() {
+        return address;
     }
 
-    public Integer getKcal() {
-        return kcal;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setKcal(Integer kcal) {
-        this.kcal = kcal;
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
-    public Double getPrice() {
-        return price;
+    public void setOrderItems(List<OrderItem> orderItems) {
+        orderItems = orderItems;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public int getId() {
+        return id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public MealType getMealType() {
-        return mealType;
-    }
-
-    public void setMealType(MealType mealType) {
-        this.mealType = mealType;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order meal = (Order) o;
-        return Objects.equals(id, meal.id) &&
-                Objects.equals(name, meal.name) &&
-                Objects.equals(kcal, meal.kcal) &&
-                Objects.equals(price, meal.price) &&
-                Objects.equals(description, meal.description) &&
-                mealType == meal.mealType;
+        Order order = (Order) o;
+        return id == order.id && Objects.equals(address, order.address) && Objects.equals(orderItems, order.orderItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, kcal, price, description, mealType);
+        return Objects.hash(id, address, orderItems);
     }
 }
 
