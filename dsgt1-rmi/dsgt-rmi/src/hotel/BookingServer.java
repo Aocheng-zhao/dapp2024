@@ -8,7 +8,7 @@ public class BookingServer {
     public static void main(String[] args) throws Exception {
         //create
         // Default to the standard RMI Registry port if not provided
-        int port = (args.length < 1) ? Registry.REGISTRY_PORT : Integer.parseInt(args[1]);
+        int port = (args.length < 1) ? Registry.REGISTRY_PORT : Integer.parseInt(args[0]);
         try{
             BookingManager bm = new BookingManager();
             IBookingManager stub = (IBookingManager) UnicastRemoteObject.exportObject(bm,0);
