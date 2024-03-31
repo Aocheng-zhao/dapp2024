@@ -14,7 +14,7 @@ public class BookingManager implements IBookingManager{
 	}
 
 	@Override
-	public Set<Integer> getAllRooms() {
+	public Set<Integer> getAllRooms()  {
 		Set<Integer> allRooms = new HashSet<Integer>();
 		Iterable<Room> roomIterator = Arrays.asList(rooms);
 		for (Room room : roomIterator) {
