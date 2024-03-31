@@ -17,8 +17,9 @@ public class BookingClient extends AbstractScriptedSimpleTest {
 
 	public static void main(String[] args) throws Exception {
 		String host = (args.length < 1) ? null : args[0];
+		int port = (args.length < 2) ? Registry.REGISTRY_PORT : Integer.parseInt(args[1]); // Default to the standard RMI Registry port if not provided
 		try {
-			Registry registry = LocateRegistry.getRegistry(host);
+			Registry registry = LocateRegistry.getRegistry(host,port);
 			IBookingManager stub = (IBookingManager) registry.lookup("BookingManager");
 			String response = stub.getAllRooms().toString();
 			System.out.println("response: " + response);}
