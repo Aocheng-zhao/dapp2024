@@ -1,8 +1,9 @@
 package hotel;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class BookingDetail {
+public class BookingDetail implements Serializable {
 
 	private String guest;
 	private Integer roomNumber;
