@@ -1,5 +1,6 @@
 package staff;
 
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import hotel.BookingManager;
 
 public class BookingClient extends AbstractScriptedSimpleTest {
 
-	private BookingManager bm = null;
+	private IBookingManager bm = null;
 
 	public static void main(String[] args) throws Exception {
 		String host = (args.length < 1) ? null : args[0];
@@ -22,48 +23,44 @@ public class BookingClient extends AbstractScriptedSimpleTest {
 			Registry registry = LocateRegistry.getRegistry(host,port);
 			IBookingManager stub = (IBookingManager) registry.lookup("BookingManager");
 			String response = stub.getAllRooms().toString();
-			System.out.println("response: " + response);}
+			System.out.println("response: " + response);
+			BookingClient client = new BookingClient();
+			client.bm = stub;
+			client.run();
+		}
 		catch (Exception e) {
 			System.err.println("Client exception: " + e.toString());
 			e.printStackTrace();
 		}
-		BookingClient client = new BookingClient();
-		client.run();
 	}
 
 	/***************
 	 * CONSTRUCTOR *
 	 ***************/
 	public BookingClient() {
-		try {
-			//Look up the registered remote instance
-			bm = new BookingManager();
-		} catch (Exception exp) {
-			exp.printStackTrace();
-		}
 	}
 
 	@Override
-	public boolean isRoomAvailable(Integer roomNumber, LocalDate date) {
+	public boolean isRoomAvailable(Integer roomNumber, LocalDate date) throws RemoteException {
 		//Implement this method
 		return bm.isRoomAvailable(roomNumber,date);
 	}
 
 	@Override
-	public void addBooking(BookingDetail bookingDetail){
+	public void addBooking(BookingDetail bookingDetail) throws RemoteException {
 		//Implement this method
 
 		bm.addBooking(bookingDetail);
 	}
 
 	@Override
-	public Set<Integer> getAvailableRooms(LocalDate date) {
+	public Set<Integer> getAvailableRooms(LocalDate date) throws RemoteException {
 		//Implement this method
 		return bm.getAvailableRooms(date);
 	}
 
 	@Override
-	public Set<Integer> getAllRooms() {
+	public Set<Integer> getAllRooms() throws RemoteException {
 		return bm.getAllRooms();
 	}
 }
